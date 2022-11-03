@@ -1,0 +1,23 @@
+syntax = "proto3";
+import public "global_options.proto";
+
+option go_package="./;proto";
+option java_package = "org.liquibase.grpc.proto";
+option java_multiple_files = true;
+option java_outer_classname = "DeactivateChangelogProto";
+
+package liquibase;
+
+service DeactivateChangelogService {
+  rpc execute(DeactivateChangelogRequest) returns (Response) {}
+}
+
+/* Removes the changelogID from your changelog so it stops sending reports to Liquibase Hub */
+message DeactivateChangelogRequest {
+  string changelog_file = 1; // *required* The root changelog
+  liquibase.GlobalOptions global_options = 2;
+}
+
+message Response {
+  string message = 1;
+}
