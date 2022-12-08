@@ -6,7 +6,7 @@ Removes the changelogID from your changelog so it stops sending reports to Liqui
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/deactivate-changelog@v4.17.2
+- uses: liquibase-github-actions/deactivate-changelog@v4.18.0
   with:
     # The root changelog
     # string
@@ -25,7 +25,7 @@ The liquibase deactivate changelog action accepts all valid liquibase global opt
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/deactivate-changelog@v4.17.2
+  - uses: liquibase-github-actions/deactivate-changelog@v4.18.0
     with:
       changelogFile: ""
       headless: true
